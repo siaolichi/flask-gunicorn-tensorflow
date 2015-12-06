@@ -21,6 +21,8 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # copy sample project
 COPY app /app
 RUN pip install --no-cache-dir -r /app/requirements.txt
-VOLUME /app
 
 CMD ["/usr/bin/supervisord"]
+
+VOLUME /app
+EXPOSE 80
