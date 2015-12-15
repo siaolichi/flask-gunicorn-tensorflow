@@ -1,13 +1,19 @@
-FROM python:3.4.3
+FROM python:3.4-slim
+
+MAINTAINER  Nicolas Allemand <contact@nicolasallemand.com>
 
 RUN apt-get update
 RUN apt-get -y install nginx supervisor
-RUN pip install --no-cache-dir gunicorn
+RUN pip install --no-cache-dir gunicorn Flask
 
-RUN mkdir -p /data
-COPY app /data
-RUN pip install --no-cache-dir -r /data/requirements.txt
-VOLUME ["/data", "/var/log"]
+RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src/app/static
+WORKDIR /usr/src/app
+
+ONBUILD COPY requirements.txt /usr/src/app/
+ONBUILD RUN pip install --no-cache-dir -r requirements.txt
+
+ONBUILD COPY . /usr/src/app
 
 # nginx setup
 RUN rm /etc/nginx/sites-enabled/default
