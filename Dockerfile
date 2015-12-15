@@ -1,6 +1,6 @@
 FROM python:3.4-slim
 
-MAINTAINER  Nicolas Allemand <contact@nicolasallemand.com>
+MAINTAINER Nicolas Allemand <contact@nicolasallemand.com>
 
 RUN apt-get update
 RUN apt-get -y install nginx supervisor
