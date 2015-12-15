@@ -7,12 +7,10 @@ aimed at a production use.
 
 ## Setup
 
-1. Create a Dockerfile in the root of your project, containing :
-```
-FROM docteurfraise/flask-python34
-```
+1. Create a Dockerfile in the root of your project, starting with : `FROM docteurfraise/flask-python34`
 2. Create a `requirements.txt` file containing your dependencies.
-3. Note: you must have a file called `app.py` at the root of your project
+
+Note: you must have a file called `app.py` at the root of your project
 with an `app` variable containing the Flask object.
 
 ## Running the project
