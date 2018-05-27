@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='default.css') }}">
+    <title>{{title}}</title>
+
+    <script language="JavaScript">
+        function send(form){
+        }
+    </script>
+
+</head>
+<body>
+    <div id="container">
+        <form id="form" name="form" action="/"" method="post"><center>
+        <div id="logo">{{title}}</div>
+        <div id="space"></div>
+        <div id="form">
+        <textarea name="sentence" class="button button1" rows="20" cols="60">Type Here</textarea>
+        <button name="vote" value="sned" onclick="send()" class="button button3"></button>
+        <div id="space"></div>
+        <div id="space"></div>
+        <div id="results"> {{button1}} :<br> {{ value1 }}</div> 
+        </form>        
+        </div>
+    </div>     
+</body>
+</html>

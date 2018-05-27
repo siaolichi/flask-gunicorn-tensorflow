@@ -1,10 +1,10 @@
-FROM python:3.4-slim
+FROM python:3.6
 
 MAINTAINER Nicolas Allemand <contact@nicolasallemand.com>
 
 RUN apt-get update
-RUN apt-get -y install nginx supervisor
-RUN pip install --no-cache-dir gunicorn Flask
+RUN apt-get -y install nginx supervisor python3-pip python3-dev
+RUN pip install --no-cache-dir gunicorn Flask tensorflow tflearn 
 
 RUN mkdir -p /usr/src/app
 RUN mkdir -p /usr/src/app/static

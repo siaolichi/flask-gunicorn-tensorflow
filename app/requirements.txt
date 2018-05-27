@@ -1,0 +1,5 @@
+redis 
+nltk 
+h5py 
+flask_cors 
+scipy
